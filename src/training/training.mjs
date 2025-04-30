@@ -359,6 +359,7 @@ const scores = {
   teacherensemble: [],
   student: [],
   finetunedstudent: [],
+  distilledstudent: [],
   studentquantized: [],
 };
 
@@ -653,6 +654,12 @@ async function buildTableRow(
       trainMatch: /^train-student-[a-z]{2,3}-[a-z]{2,3}$/,
     },
     {
+      name: 'distilledstudent',
+      evalMatch:
+        /^evaluate-distilled-student-flores-devtest-[a-z]{2,3}-[a-z]{2,3}$/,
+      trainMatch: /^distill-student-[a-z]{2,3}-[a-z]{2,3}$/,
+    },
+    {
       name: 'finetunedstudent',
       evalMatch:
         /^evaluate-finetuned-student-flores-devtest-[a-z]{2,3}-[a-z]{2,3}$/,
@@ -756,8 +763,10 @@ async function buildTableRow(
     'translate-corpus-',
     'train-student-',
     'evaluate-student-',
+    'distill-student-',
+    'evaluate-distilled-student-',
     'finetune-student-',
-    'evaluate-finetune-student-',
+    'evaluate-finetuned-student-',
     'quantize-',
     'evaluate-quantized-',
     'export-',
